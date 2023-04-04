@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+  background-color: black;
+  color: white;
+}
+*{
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.alignment{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  align-items: center;
+  justify-items: center;
+  row-gap: 30px;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 15px; 
+  /* position: relative; */
+  /* left: 12px; */
+  position: relative !important;
+  left: 112px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(80, 79, 79);
+  outline: 1px solid rgb(95, 96, 96);
+  border-radius: 10px;
+  
+}
+.scrollbar::-webkit-scrollbar-track
+{
+  position: relative;
+  right: 12px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+@media screen and (max-width:412px) {
+  .alignment{
+    grid-template-columns: repeat(1,1fr);
+    justify-content: start;
+    align-items: start;
+  }
+}
