@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import {FaTimes} from 'react-icons/fa';
 import MessageBox from './MessageBox';
 // import { Link } from 'react-router-dom';
@@ -10,7 +10,8 @@ const ChatBox = () => {
     const [isChatBox,setIsChatBox] = useState(true);
     const [isConnect,setIsConnect] = useState(true);
     const [isMessage,setIsMessage] = useState(false);
-    const [messageScreen,setMessageScreen] = useState(false)
+    const [messageScreen,setMessageScreen] = useState(false);
+    const [isInfo,setIsInfo] = useState('')
     const [connections,setConnections] = useState([
         {
             id:1,
@@ -97,24 +98,30 @@ const ChatBox = () => {
     const message = () => {
         setIsMessage(true)
         setIsConnect(false)
+        setMessageScreen(false)
     }
     const connection = () => {
         setIsConnect(true);
         setIsMessage(false);
+        setMessageScreen(false)
     }
-    let head;
     const messageWindow = (id) => {
-        const info = messages.find((message) => message.id === id );
-        head = info.title;
-        console.log(head);
+        // const info = messages.find((message) => message.id === id );
+        // const newInfo = [info]
+        setIsInfo(id)
+        // console.log(info);
+        // console.log(isInfo);
         
         // console.log(JSON.parse(JSON.stringify(isInfo[0].title)));
         setMessageScreen(true)
     }
+    useEffect(() => {
+        // console.log(isInfo);
+    },[isInfo])
     
     
   return (
-    <div style={isChatBox ? {translate:"-5px"}:  {translate:"540px"} }  className=' duration-500 bg-black chatbox w-[30%] absolute overflow-x-hidden overflow-y-hidden right-[18px] top-[140px] z-2 h-[78vh] rounded-md'>
+    <div style={isChatBox ? {translate:"-5px"}:  {translate:"540px"} }  className=' duration-500 bg-black chatbox  w-[90%] lg:w-[30%] absolute overflow-x-hidden overflow-y-hidden right-[18px] top-[140px] z-2 h-[78vh] rounded-md'>
         <div className='w-[100%] flex flex-col font-Inter bg-black'>
             <section className=' flex justify-between pt-2 pl-[20px] pr-[10px] h-[12vh] overflow-hidden bg-black text-white'>
                 <div className='  w-[100%] text-[1.3rem] font-[500] flex justify-start items-end gap-1 relative top-[0px]'>
@@ -149,7 +156,7 @@ const ChatBox = () => {
                 </div>
             </section>
             <section className={messageScreen  ? 'flex font-Inter flex-col justify-between items-center w-[100%] h-[60vh] scrollbar' : "hidden"}>
-                <MessageBox head={head} />
+                <MessageBox messages={messages} isInfo={isInfo} />
             </section>
             
         </div>

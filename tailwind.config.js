@@ -5,8 +5,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        "Inter" : ["Inter"]
+      fontFamily: {
+        "Inter": ["Inter"]
       }
     },
   },
