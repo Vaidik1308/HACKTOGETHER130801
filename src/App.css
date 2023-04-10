@@ -3,9 +3,13 @@
 body{
   background-color: black;
   color: white;
+  overflow-x: hidden;
 }
 *{
+  overflow-x: hidden;
   box-sizing: border-box;
+}
+.App{
   overflow-x: hidden;
 }
 .alignment{
@@ -21,6 +25,7 @@ body{
   /* left: 12px; */
   position: relative !important;
   left: 112px;
+  
 }
 .scrollbar::-webkit-scrollbar-thumb {
   background-color: rgb(80, 79, 79);
@@ -45,11 +50,24 @@ body{
   position: relative !important;
   left: 112px;
 }
+.individual:hover{
+  background-color: #49A5C3;
+}
+.chat-head{
+  background: linear-gradient(180deg, #3A6F86 0%, rgba(112, 207, 220, 0) 100%);
+}
+.scroll{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
 @media screen and (max-width:412px) {
   .alignment{
     grid-template-columns: repeat(1,1fr);
     justify-content: start;
     align-items: start;
+  }
+  body{
+    overflow-x: hidden;
   }
 }

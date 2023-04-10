@@ -193,10 +193,13 @@ const RegisterForm = () => {
             />
             <span className="inputError">{errors.confirmPassword}</span>
           </div>
-            <button className="registerButton flex justify-center items-center text-white gap-2 text-[1.2rem] bg-[#2B29AB] w-[15%] rounded-lg p-1 text-black" type="submit">
+            <button className="registerButton flex justify-center items-center text-white gap-2 text-[1.2rem] bg-[#2B29AB] w-[15%] rounded-lg p-1 " type="submit">
             Register
             </button>
-          <p className="mt-1">Or</p>
+          <p className="mt-0 text-[1.2rem]">Or</p>
+
+
+        </form>
           <div className="flex w-[100%] justify-center gap-5  mt-1 font-[500] font-Inter">
             <button className="registerButton flex justify-center items-center gap-2 text-[1.2rem] bg-white w-[15%] rounded-lg p-1 text-black">
             <span><FcGoogle/></span>  Sign In with Google
@@ -205,15 +208,12 @@ const RegisterForm = () => {
             <span><AiFillGithub/></span>  Sign In with Google
             </button>
           </div>
-
-          <small>
+          <small className="mb-1 flex justify-center mt-2">
             {" "}
             <a className="form-control_anchor text-[1.2rem] " href="/login">
               Already have an account? <span className="text-[#2B29AB]">Login</span> 
             </a>
           </small>
-
-        </form>
       </div>
     </div>
   );

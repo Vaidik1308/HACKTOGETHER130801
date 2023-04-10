@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Ads from './Ads';
-
+import {FaTimes} from 'react-icons/fa';
 import { BsCurrencyRupee } from 'react-icons/bs';
 import ChatBox from '../Components/ChatBox/ChatBox';
+import MessageBox from '../Components/ChatBox/MessageBox';
+import HackDetails from '../Components/ChatBox/HackDetails';
 
 
 const Hackathon = () => {
+  const [isDetails,setIsDetails] = useState(false);
+  const [isMessageBox,setIsMessageBox] = useState(true)
   return (
     <>
       <Ads/>
@@ -70,8 +74,12 @@ const Hackathon = () => {
                 <img className='w-[12%] lg:w-[10%]' src={require('../images/people_2.png')} alt="" />
                 <p className=' text-[0.56rem] lg:text-[10px]'>Team Size 2-4 members</p>
               </div>
-              <button className=' my-1  text-[0.75rem] lg:my-2 lg:bg-[#C5C5CF] lg:w-[43%] lg:h-[29px] font-[600] lg:text-[10px] lg:p-1 rounded-md'>Details</button>
+              <button onClick={() => setIsDetails(true)}  className=' my-1  text-[0.75rem] lg:my-2 lg:bg-[#C5C5CF] lg:w-[43%] lg:h-[29px] font-[600] lg:text-[10px] lg:p-1 rounded-md'>Details</button>
               <button className='text-[0.75rem]  w-[64%] h-[29px] lg:mb-2 lg:w-[43%] lg:h-[32px] bg-[#2B29AB] text-white font-[600] lg:text-[10px] lg:p-1 rounded-md'>Register</button>
+            </div>
+            <div className={isDetails ? 'absolute top-[20%] left-[25%] w-full h-[100vh] z-10' : 'hidden'} >
+              
+              <HackDetails setIsDetails={setIsDetails} />
             </div>
           </article>
         </section>
@@ -400,7 +408,8 @@ const Hackathon = () => {
             </div>
           </article>
         </section>
-        <ChatBox/>
+        <ChatBox setIsMessageBox={setIsMessageBox} />
+        <MessageBox/>
       </div>
     </>
   )

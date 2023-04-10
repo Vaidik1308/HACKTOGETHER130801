@@ -9,7 +9,7 @@ const NavBar = () => {
 
     const [isBurger,setIsBurger] = useState(false)
   return (
-    <div className='mt-2  mx-1 lg:text-[17px] font-Inter lg:flex lg:justify-between lg:h-[9vh] lg:mt-2 lg:items-center lg:mx-2 overflow-hidden flex'>
+    <div className='mt-2 overflow-x-hidden w-full  mx-1 lg:text-[17px] font-Inter lg:flex lg:justify-between lg:h-[9vh] lg:mt-2 lg:items-center lg:mx-2 overflow-hidden flex'>
         <section className=' lg:w-fit w-[25%]'>
             <img className='lg:w-[65%] mt-2 lg:mt-0' src={require('../images/LOGO.png')} alt="" />
         </section>
@@ -30,7 +30,7 @@ const NavBar = () => {
                 <Link className='lg:w-[20%] lg:items-center lg:h-[5vh] lg:rounded-lg lg:flex lg:justify-center lg:bg-[#222224]'>My Networks</Link>
                 <Link className=' lg:w-[29%] lg:items-center lg:h-[5vh] lg:rounded-lg lg:flex lg:justify-center lg:bg-[#222224]'>Host a hackathon</Link>
             </ul>
-            <ul style={isBurger ? {translate:"0px"}: {translate:"412px"}} className=' duration-500  lg:hidden flex flex-col bg-white text-black w-[55%] items-start pl-4 h-[70vh] absolute z-10 right-[12px] top-[5px] rounded-md justify-start gap-10 font-[700] text-[18px]'>
+            <ul style={isBurger ? {translate:"0px"}: {translate:"-412px"}} className=' duration-500  lg:hidden flex flex-col bg-white text-black w-[55%] items-start pl-4 h-[70vh] absolute z-10 right-[12px] top-[5px] rounded-md justify-start gap-10 font-[700] text-[18px]'>
                 <div className='w-[95%] mt-2 text-[32px] flex justify-end'><p onClick={() => setIsBurger(false)}><FaTimes/></p></div>
                 <Link className='bg-black text-white w-[40%] text-center rounded-md h-[5vh] p-1 lg:items-center lg:h-[5vh] lg:rounded-lg lg:flex lg:justify-center lg:bg-[#222224]'>Home</Link>
                 <Link className='bg-black text-white w-[70%] text-center rounded-md h-[5vh] p-1 lg:w-[20%] lg:items-center lg:h-[5vh] lg:rounded-lg lg:flex lg:justify-center lg:bg-[#222224]'>Hackathons</Link>

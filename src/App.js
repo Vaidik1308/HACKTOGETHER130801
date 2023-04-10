@@ -3,13 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import Hackathon from './Pages/Hackathon';
 import NavBar from './Pages/NavBar';
-import MessageBox from './Components/ChatBox/MessageBox';
+// import MessageBox from './Components/ChatBox/MessageBox';
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 
 function App() {
   return (
-    <div className="App h-fit  text-white overflow-x-hidden">
+    <div className="App h-fit w-full  text-white overflow-x-hidden">
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />

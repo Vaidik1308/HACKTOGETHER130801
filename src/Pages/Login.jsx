@@ -65,7 +65,7 @@ const LoginForm = () => {
   // useEffect(()=>{console.warn(currentUser)},[currentUser.state]);
 
   return (
-    <div className="container1 w-full">
+    <div className="container1 w-full overflow-x-auto">
       {/* <NavBar shadowNavbar={true} /> */}
 
       <div className="registrationContainer w-full h-[85vh]">
