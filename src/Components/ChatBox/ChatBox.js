@@ -1,20 +1,19 @@
 import React,{ useState} from 'react';
 import {FaTimes} from 'react-icons/fa';
-import MessageBox from './MessageBox';
 
 
 
 
 
-const ChatBox = ({setIsMessageBox}) => {
-    const [isChatBox,setIsChatBox] = useState(true);
+const ChatBox = ({setIsMessageBox,isChatBox,setIsChatBox}) => {
+    
     // const [isGroup,setIsGroup] = useState(false);
     
     
    
     
   return (
-    <div style={isChatBox ? {translate:"15px"}:  {translate:"480px"} }  className=' duration-500 bg-[#F0F0F0] chatbox w-[95%] font-Inter lg:w-[28%] absolute overflow-x-hidden overflow-y-hidden right-[28px] top-[200px] z-2 h-[78vh] rounded-md justify-center items-center'>
+    <div style={isChatBox ? {translate:"15px"}:  {translate:"480px"} }  className=' duration-500 bg-[#F0F0F0] chatbox w-[95%] font-Inter lg:w-[28%] absolute overflow-x-hidden overflow-y-hidden right-[28px] top-[200px] z-30 h-[78vh] rounded-md justify-center items-center'>
         <section className='w-full my-2 mb-8'>
             <article className='flex w-full justify-between'>
                 <div className='flex w-[55%] justify-start ml-4 items-center '>

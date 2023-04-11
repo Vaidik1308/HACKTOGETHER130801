@@ -28,16 +28,19 @@ body{
   
 }
 .scrollbar::-webkit-scrollbar-thumb {
-  background-color: rgb(80, 79, 79);
+  background-color: rgb(148, 143, 143);
   outline: 1px solid rgb(95, 96, 96);
   border-radius: 10px;
+  position: relative;
+  
   
 }
 .scrollbar::-webkit-scrollbar-track
 {
   position: relative;
-  right: 12px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  /* right: 12px; */
+  /* left: 122px; */
+	-webkit-box-shadow: inset 0 0 6px rgba(163, 157, 157, 0.3);
 	border-radius: 10px;
 	background-color: #F5F5F5;
 }
@@ -48,7 +51,7 @@ body{
   /* left: 12px; */
   opacity: 0;
   position: relative !important;
-  left: 112px;
+  /* left: 112px; */
 }
 .individual:hover{
   background-color: #49A5C3;

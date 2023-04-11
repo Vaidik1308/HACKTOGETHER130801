@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import Ads from './Ads';
-import {FaTimes} from 'react-icons/fa';
 import { BsCurrencyRupee } from 'react-icons/bs';
 import ChatBox from '../Components/ChatBox/ChatBox';
 import MessageBox from '../Components/ChatBox/MessageBox';
 import HackDetails from '../Components/ChatBox/HackDetails';
+import Profile from '../Components/ChatBox/Profile';
+import { FaLess } from 'react-icons/fa';
 
 
 const Hackathon = () => {
   const [isDetails,setIsDetails] = useState(false);
-  const [isMessageBox,setIsMessageBox] = useState(true)
+  const [isMessageBox,setIsMessageBox] = useState(false)
+  const [isProfile,setIsProfile] = useState(false)
+  const [isChatBox,setIsChatBox] = useState(true);
   return (
     <>
       <Ads/>
@@ -408,8 +411,23 @@ const Hackathon = () => {
             </div>
           </article>
         </section>
-        <ChatBox setIsMessageBox={setIsMessageBox} />
-        <MessageBox/>
+        <ChatBox
+          isChatBox={isChatBox}
+          setIsChatBox={setIsChatBox} 
+          setIsMessageBox={setIsMessageBox} />
+        <MessageBox 
+          isMessageBox={isMessageBox}  
+          setIsMessageBox={setIsMessageBox} 
+          setIsProfile={setIsProfile} 
+          isChatBox={isChatBox}
+        />
+        <Profile 
+          isChatBox={isChatBox}
+          setIsProfile={setIsProfile} 
+          isProfile={isProfile}
+          isMessageBox={isMessageBox}
+          setIsMessageBox={setIsMessageBox} 
+        />
       </div>
     </>
   )
